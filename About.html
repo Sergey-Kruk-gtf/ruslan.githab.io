@@ -1,0 +1,133 @@
+<!doctype html>
+<html lang="en">
+  <head>
+      <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="content-language" content="by">
+    <meta http-equiv="content-type" content="text/html; charset=windows-1251">
+    <meta name="keywords" content="Ремонт,настройка, модернизация,диагностика,пк,ноутбука, принтер, сканер,в Бобруйске">
+    <meta name="description" content="Находимся,Бобруйск,50летВЛКСМ,дом 20 ">
+    <!--Бутстрап -->
+    <link rel="stylesheet" href="css/bootstrap.css">
+    <link rel="stylesheet" href="css/mainstyle.css">
+    <link href="https://fonts.googleapis.com/css?family=Raleway+Dots" rel="stylesheet">
+    <script src="js/jquery-3.3.1.slim.js"></script>
+    <script src="js/popper.js"></script>
+    <script src="js/bootstrap.js"></script>
+    <link rel="icon" type="image/ico" href="img/favi.ico">
+    <title>О нас</title>
+  </head>
+  <body>
+    <!--Навигация сайта-->
+    <nav class=" navbar navbar-expand-sm navbar-dark sticky-top"  style="background-color: rgb(76, 76, 76)">
+      <div class="logo">
+        <a href="About.html"><img src="img/images.png" class="graficlogo" src"img/1.png" alt="logo"></a>
+      </div>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggle" style="mr-auto; width: auto; height:auto"><h4>menu</h4></span>
+        </button>
+         <div class="collapse navbar-collapse" id="navbarSupportedContent">
+             <ul class="navbar-nav">
+                <ul class="navbar-nav">
+                  <li class="nav-item active" ><a href="index.html"><h3>На главную</h3></a></li>
+                  <li class="nav-item" ><a href="pricing.html"><h3>Услуги и цены</h3></a></li>
+                  <li class="nav-item" ><a href="About.html" class="disabled"><h3>О нас</h3></a></li>
+                  <li class="nav-item" >
+                <a  href="#" class="nav-item" data-toggle="modal" data-target="#exampleModal2" ><h3>Оставить заявку</h3></a>
+                </li>
+              </ul>
+             </ul>
+           </div>
+    </nav>
+    <h4><p>Наш сервисный центр-это быстрое решение любых проблем с ноутбуком, компьютером, офисной техникой. Наши специалисты оперативно реанимируют даже те ПК, от которых отказались другие мастера.</p><p>У нас выгодные цены на ремонт — вы можете убедиться в этом, ознакомившись с нашими тарифами.</p><p>Наши специалисты возьмут на ремонт любой ноутбук и спасут его от всех неприятностей. Заказать ремонт  можно прямо сейчас — не теряйте времени, оставляйте заявку!</p></h4>
+    <!--ФОН САЙТА-->
+  <img src="img/fon2.png" alt="" class="d-block w-100">
+<h2 align="center">Мы находимся по адресу:г.Бобруйск, 50 летВЛКСМ, д. 20</h2>
+<h2 align="center">Наши телефоны:8(029)7061938;  8(029)7403079</h2>
+
+  <style>
+#map {width:100%; height:800px;}
+</style>
+
+<div id="map"></div>
+
+<script>
+function initMap() {
+var element = document.getElementById('map');
+var options = {
+ zoom: 15,
+ center: {lat: 53.169703,lng: 29.194341},
+};
+
+var myMap = new google.maps.Map(element, options);
+
+var markers = [
+ {
+   coordinates: {lat: 53.169703, lng: 29.194341},
+   info: '<h5>Ремонт компьютеров</h5>'
+ }
+];
+
+for(var i = 0; i < markers.length; i++) {
+ addMarker(markers[i]);
+}
+
+function addMarker(properties) {
+ var marker = new google.maps.Marker({
+   position: properties.coordinates,
+   map: myMap
+ });
+
+ if(properties.image) {
+   marker.setIcon(properties.image);
+ }
+
+ if(properties.info) {
+   var InfoWindow = new google.maps.InfoWindow({
+     content: properties.info
+   });
+
+   marker.addListener('click', function(){
+     InfoWindow.open(myMap, marker);
+   });
+ }
+}
+}
+</script>
+
+
+<script async defer
+src="https://maps.googleapis.com/maps/api/js?key=AIzaSyD-D9L-tB_JDm9k1drLiLcNRUxIfik1UZI&callback=initMap">
+</script>
+
+  <!--Заявка-->
+  <div class="modal fade" id="exampleModal2" tabindex="-1" role="dialog" aria-labelledby="exampleModal2" aria-hidden="true">
+      <div class="modal-dialog modal-sm" role="document">
+          <div class="modal-content">
+              <div class="modal-header">
+                  <div class="modal-footer">
+                      <div class="container-fluid">
+                      <form role="form">
+                        <div class="form-group">
+                          <label for="text"><h5 >Ваше имя</h5></label>
+                            <input type="text" class="form-control input-lg"  id="text" >
+                          <label for="text1"><h5>Краткое описание неисправности</h5></label>
+                            <input type="text" class="form-control input-lg" id="text1" >
+                          <label for="number"><h5>Ваш номер телефона</h5></label>
+                            <input type="tel" class="form-control input-lg" id="number">
+                            <label for="email"><h5>Ваш Email</h5></label>
+                            <input type="email" class="form-control input-lg" id="email">
+                            <div style="margin: auto">
+                             <button href=# class="btn btn-success btn-sm " style="margin: 10px 0px 0px 0px"><h5>Подтвердить</h5></button>
+                            </div>
+                            <div style="margin: auto">
+                              <button class="btn btn-primary btn-sm" style="margin: 10px 0px 0px 0px" data-dismiss="modal" ><h5>Закрыть</h5></button>
+                            </div>
+                        </div>
+                      </form>
+                          </div>
+                  </div>
+
+  </div>
+  </body>
